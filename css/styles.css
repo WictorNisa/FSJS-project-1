@@ -1,4 +1,4 @@
-/** 
+/**
  * Treehouse FSJS Techdegree
  * Random Quote Generator - CSS
  */
@@ -67,6 +67,15 @@ body {
 }
 
 .year:before {
+  content: ", ";
+  font-style: normal;
+}
+
+.movie-year{
+  font-style: oblique;
+}
+
+.movie-year::before{
   content: ", ";
   font-style: normal;
 }

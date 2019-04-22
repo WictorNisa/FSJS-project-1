@@ -1,56 +1,81 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-******************************************/
 
-// Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
+// Selecting the div with the id of 'quote-box'
 
 
-/*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
-***/
+const quoteBox = document.getElementById('quote-box');
 
 
+// Creating an array filled with 5 objects with diffrent key value pairs
+const colors = ['#740001', '#1a472a', '#ecb939', '#0e1a40'];
+const quotes = [
+  {
+    quote: "”I hope you're pleased with yourselves. We could all have been killed — or worse, expelled. Now if you don't mind, I'm going to bed.”",
+    source: "Hermione Granger, Harry Potter and the Sorcerer's Stone",
+    movieYear: 'The first Movie'
+  },
+  {
+    quote: "“It does not do well to dwell on dreams and forget to live.”",
+    source: "Albus Dumbledore, Harry Potter and the Sorcerer's Stone",
+    year: "Year: Unknown"
+  },
+  {
+    quote: "“You're a little scary sometimes, you know that? Brilliant ... but scary“",
+    source: " Ron Weasley, Harry Potter and the Sorcerer's Stone"
+  },
+  {
+    quote: "“It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.“",
+    source: " Albus Dumbledore, Harry Potter and the Sorcerer's Stone",
+    citation: "Movie"
+  },
+  {
+    quote: "“If you want to know what a man’s like, take a good look at how he treats his inferiors, not his equals.“",
+    source: " Sirius Black, Harry Potter and the Goblet of Fire",
+    movieYear: 'The fourth Movie'
+  }
+
+];
+
+// A function that will get a random quote from the array and then return it
+
+function getRandomQuote() {
+  const randomNumb = quotes[Math.floor(Math.random() * quotes.length)];
+  return randomNumb;
+}
+
+function getRandomColor() {
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  return randomColor;
+}
 
 
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
-***/
+// This will print the random quote using some html manipulation and acessing the diffrent object properties
 
+function printQuote() {
+  const randomSaying = getRandomQuote();
+  const randomHouseColor = getRandomColor();
+  let html = `
+  <p class="quote"> ${randomSaying.quote} </p>
+  <p class="source"> ${randomSaying.source}`
+  if(randomSaying.hasOwnProperty('citation')) {
+    html += `<span class="citation"> ${randomSaying.citation} </span>`
 
+  }
+  if(randomSaying.hasOwnProperty('year')) {
+    html += `<span class="year"> ${randomSaying.year} </span>`
+  }
+  if(randomSaying.hasOwnProperty('movieYear')) {
+    html += `<span class="movie-year"> ${randomSaying.movieYear} </span>`
+  }
+  `
+  </p>
+  `;
+  document.body.style.backgroundColor = randomHouseColor;
+  quoteBox.innerHTML = html;
 
+}
+printQuote();
 
-/***
-  Create the `printQuote` function to: 
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/
+setInterval(printQuote, 4000);
 
-
-
-
-/***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
-***/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
