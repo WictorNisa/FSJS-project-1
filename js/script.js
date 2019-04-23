@@ -9,26 +9,26 @@ const quoteBox = document.getElementById('quote-box');
 const colors = ['#740001', '#1a472a', '#ecb939', '#0e1a40'];
 const quotes = [
   {
-    quote: "”I hope you're pleased with yourselves. We could all have been killed — or worse, expelled. Now if you don't mind, I'm going to bed.”",
+    quote: "I hope you're pleased with yourselves. We could all have been killed — or worse, expelled. Now if you don't mind, I'm going to bed.",
     source: "Hermione Granger, Harry Potter and the Sorcerer's Stone",
     movieYear: 'The first Movie'
   },
   {
-    quote: "“It does not do well to dwell on dreams and forget to live.”",
+    quote: "It does not do well to dwell on dreams and forget to live.",
     source: "Albus Dumbledore, Harry Potter and the Sorcerer's Stone",
     year: "Year: Unknown"
   },
   {
-    quote: "“You're a little scary sometimes, you know that? Brilliant ... but scary“",
+    quote: "You're a little scary sometimes, you know that? Brilliant ... but scary",
     source: " Ron Weasley, Harry Potter and the Sorcerer's Stone"
   },
   {
-    quote: "“It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.“",
+    quote: "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.",
     source: " Albus Dumbledore, Harry Potter and the Sorcerer's Stone",
     citation: "Movie"
   },
   {
-    quote: "“If you want to know what a man’s like, take a good look at how he treats his inferiors, not his equals.“",
+    quote: "If you want to know what a man’s like, take a good look at how he treats his inferiors, not his equals.",
     source: " Sirius Black, Harry Potter and the Goblet of Fire",
     movieYear: 'The fourth Movie'
   }
